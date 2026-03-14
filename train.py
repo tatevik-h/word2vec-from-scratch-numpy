@@ -1,13 +1,6 @@
 from word2vec import Word2Vec
 from utils import negative_sampling. tokenize, build_vocab, generate_pairs
-
-
-CORPUS_PATH = "data/corpus.txt"
-WINDOW_SIZE = 2
-EMBED_DIM = 50
-NEGATIVE_SAMPLES = 5
-EPOCHS = 5
-LEARNING_RATE = 0.01
+from congig import *
 
 
 def main():
