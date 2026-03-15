@@ -41,7 +41,7 @@ def main():
 
     for epoch in range(epochs):
         total_loss = 0
-        for target_ids, context_id in pairs:
+        for target_id, context_id in pairs:
             negative_ids = negative_sampling(len(vocab), context_id, NEGATIVE_SAMPLES)
             loss = model.train_on_pair(target_id, context_id, negative_ids)
             total_loss += loss
