@@ -12,18 +12,18 @@ def tokenize(file_path):
 def build_vocab(tokens):
     vocab = sorted(set(tokens))
     word_to_id = {word: i for i , word in enumerate(vocab)}
-    id_to_word {i : word for word, i in word_to_id.items()}
+    id_to_word = {i : word for word, i in word_to_id.items()}
 
     return vocab, word_to_id, id_to_word
 
 
-def generate_pairs(tokens, word_to_ids, windiw_size=2):
+def generate_pairs(tokens, word_to_id, window_size=2):
     pairs = []
 
     for i, target_word in enumerate(tokens):
-        token_id = word_to_id[target_word]
+        target_id = word_to_id[target_word]
 
-        start = max(0, i - windiw_size)
+        start = max(0, i - window_size)
         end = min(len(tokens), i + window_size + 1)
 
         for j in range(start, end):
