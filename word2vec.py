@@ -36,9 +36,9 @@ class Word2Vec:
         self.W_in[target_id] -= self.lr * grand_pos * self.v_context
         self.W_out[context_id] -= self.lr * grand_pos * self.v_target
 
-        grad_neg 1 - self.neg_probs
+        grad_neg = 1 - self.neg_probs
         for i, neg_id in enumerate(negative_ids):
-            self.W_in[target_id] = -=  self.lr * grand_neg[i] * self.v_neg[i]
+            self.W_in[target_id] -=  self.lr * grand_neg[i] * self.v_neg[i]
             self.W_out[neg_id] -= self.lr * grad_neg[i] * self.v_target
 
 
