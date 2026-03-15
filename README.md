@@ -17,3 +17,5 @@ Pure NumPy implementation of  Word2Vec(Skip-Gram with Negative Sampling) includi
 `make install`
 
 `make train`
+
+`make test`
