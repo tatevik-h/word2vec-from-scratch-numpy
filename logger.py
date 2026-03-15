@@ -21,7 +21,7 @@ def get_logger(name: str):
     file_handler = logging.FileHandler("training.log")
     file_handler.setFormatter(formatter)
 
-    logger.addhandler(console_handler)
-    logger.addhandler(file_handler)
+    logger.addHandler(console_handler)
+    logger.addHandler(file_handler)
 
     return logger
