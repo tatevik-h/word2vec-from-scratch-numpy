@@ -1,7 +1,7 @@
 import argparse
 
 from word2vec import Word2Vec
-from utils import negative_sampling. tokenize, build_vocab, generate_pairs
+from utils import negative_sampling, tokenize, build_vocab, generate_pairs
 from config import *
 from logger import get_logger
 
@@ -13,7 +13,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Train Word@Vec model")
 
     parser.add_argument("--epochs", type=int, default=5, help="Number of training epochs")
-    parser.add_argument("--embedding_dim", type=int, default=50, help="Embedding dimention")
+    parser.add_argument("--embedding_dim", type=int, default=50, help="Embedding dimension")
     parser.add_argument("--window_size", type=int, default=2, help="Context window size")
 
     return parser.parse_args()
@@ -32,7 +32,7 @@ def main():
     
     vocab, word_to_id, id_to_word = build_vocab(tokens)
 
-    pairs generate_pairs(tokens, word_to_id, window_size)
+    pairs = generate_pairs(tokens, word_to_id, window_size)
 
     logger.info(f"Vocabulary size: {len(vocab)}")
     logger.info(f"Training pairs: {len(pairs)}")
@@ -46,7 +46,7 @@ def main():
             loss = model.train_on_pair(target_id, context_id, negative_ids)
             total_loss += loss
 
-        logger.ing(f"Epoch {epoch+1} | Loss: {total_loiss:.4f}")
+        logger.info(f"Epoch {epoch+1} | Loss: {total_loss:.4f}")
 
 
     word = list(word_to_id.keys())[0]
@@ -58,7 +58,7 @@ def main():
 
     logger.info("Most similar words:")
 
-    for i in simi;lar_ids:
+    for i in similar_ids:
         logger.info(id_to_word[i])
 
 
