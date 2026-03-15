@@ -3,7 +3,7 @@ import numpy as np
 from utils import tokenize, build_vocab, generate_pairs, negative_sampling
 
 
-def test_tikenize(tmp_path):
+def test_tokenize(tmp_path):
     file = tmp_path / "corpus.txt"
     file.write_text("hello world hello")
 
@@ -13,7 +13,7 @@ def test_tikenize(tmp_path):
 
 
 def test_build_vocab():
-    tokens = ["a", "b", "c"]
+    tokens = ["a", "b", "a"]
 
     vocab, word_to_id, id_to_word = build_vocab(tokens)
 
