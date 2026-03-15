@@ -6,11 +6,11 @@ def sigmoid(x):
 
 
 class Word2Vec:
-    def __init__(self, vocal_size, embedding_dim=50, learming_rate=0.01, negarive_samples=5):
-        self.vocab_size = vocal_size
-        self.embeddind_dim = embedding_dim
-        self.lr = learming_rate
-        self.negative_samples = negarive_samples
+    def __init__(self, vocal_size, embedding_dim=50, learning_rate=0.01, negative_samples=5):
+        self.vocal_size = vocal_size
+        self.embedding_dim = embedding_dim
+        self.lr = learning_rate
+        self.negative_samples = negartve_samples
 
 
         self.W_in = np.random.randn(vocal_size, embedding_dim) * 0.01
