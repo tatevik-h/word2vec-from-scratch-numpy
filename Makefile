@@ -1,4 +1,4 @@
-.PHONY: install train train docer-build docker-run clean
+.PHONY: install train docker-build docker-run clean test
 
 install:
 	pip install -r requirements.txt
@@ -7,7 +7,7 @@ train:
 	python train.py
 
 docker-build:
-	python build -t word2vec-numpy .
+	docker build -t word2vec-numpy .
 
 docker-run:
 	docker run --rm word2vec-numpy
